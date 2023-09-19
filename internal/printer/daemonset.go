@@ -22,7 +22,7 @@ func DaemonSetListHandler(ctx context.Context, list *appsv1.DaemonSetList, opts 
 		return nil, errors.New("daemon set list is nil")
 	}
 
-	cols := component.NewTableCols("Name", "Labels", "Desired", "Current", "Ready",
+	cols := component.NewTableCols("Name", "Desired", "Current", "Ready",
 		"Up-To-Date", "Age", "Node Selector")
 	ot := NewObjectTable("Daemon Sets", "We couldn't find any daemon sets!", cols, opts.DashConfig.ObjectStore())
 	ot.EnablePluginStatus(opts.DashConfig.PluginManager())

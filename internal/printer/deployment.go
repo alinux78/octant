@@ -27,7 +27,7 @@ func DeploymentListHandler(ctx context.Context, list *appsv1.DeploymentList, opt
 		return nil, errors.New("nil list")
 	}
 
-	cols := component.NewTableCols("Name", "Labels", "Status", "Age", "Containers", "Selector")
+	cols := component.NewTableCols("Name", "Status", "Age", "Containers", "Selector", "Labels")
 	ot := NewObjectTable("Deployments", "We couldn't find any deployments!", cols, opts.DashConfig.ObjectStore())
 	ot.EnablePluginStatus(opts.DashConfig.PluginManager())
 	for _, d := range list.Items {

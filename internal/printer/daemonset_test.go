@@ -50,7 +50,7 @@ func Test_DaemonSetListHandler(t *testing.T) {
 	got, err := DaemonSetListHandler(ctx, list, printOptions)
 	require.NoError(t, err)
 
-	cols := component.NewTableCols("Name", "Labels", "Desired", "Current", "Ready",
+	cols := component.NewTableCols("Name", "Desired", "Current", "Ready",
 		"Up-To-Date", "Age", "Node Selector")
 	expected := component.NewTable("Daemon Sets", "We couldn't find any daemon sets!", cols)
 	expected.Add(component.TableRow{

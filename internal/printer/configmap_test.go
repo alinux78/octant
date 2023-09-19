@@ -50,7 +50,7 @@ func Test_ConfigMapListHandler(t *testing.T) {
 	got, err := ConfigMapListHandler(ctx, object, printOptions)
 	require.NoError(t, err)
 
-	cols := component.NewTableCols("Name", "Labels", "Data", "Age")
+	cols := component.NewTableCols("Name", "Data", "Age", "Labels")
 	expected := component.NewTable("ConfigMaps", "We couldn't find any config maps!", cols)
 	expected.Add(component.TableRow{
 		"Name": component.NewLink("", configMap.Name, "/configMap",

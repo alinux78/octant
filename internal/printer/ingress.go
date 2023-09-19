@@ -25,7 +25,7 @@ func IngressListHandler(ctx context.Context, list *networkingv1.IngressList, opt
 		return nil, errors.New("ingress list is nil")
 	}
 
-	cols := component.NewTableCols("Name", "Labels", "Hosts", "Address", "Ports", "Age")
+	cols := component.NewTableCols("Name", "Hosts", "Address", "Ports", "Age", "Labels")
 	ot := NewObjectTable("Ingresses", "We couldn't find any ingresses!", cols, options.DashConfig.ObjectStore())
 	ot.EnablePluginStatus(options.DashConfig.PluginManager())
 	for _, ingress := range list.Items {

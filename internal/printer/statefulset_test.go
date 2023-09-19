@@ -82,7 +82,7 @@ func Test_StatefulSetListHandler(t *testing.T) {
 	got, err := StatefulSetListHandler(ctx, object, printOptions)
 	require.NoError(t, err)
 
-	cols := component.NewTableCols("Name", "Labels", "Desired", "Current", "Age", "Selector")
+	cols := component.NewTableCols("Name", "Desired", "Current", "Age", "Selector", "Labels")
 	expected := component.NewTable("StatefulSets", "We couldn't find any stateful sets!", cols)
 	expected.Add(component.TableRow{
 		"Name": component.NewLink("", "web", "/path",

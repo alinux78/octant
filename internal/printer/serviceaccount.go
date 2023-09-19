@@ -26,7 +26,7 @@ func ServiceAccountListHandler(ctx context.Context, list *corev1.ServiceAccountL
 		return nil, errors.New("service account list is nil")
 	}
 
-	cols := component.NewTableCols("Name", "Labels", "Secrets", "Age")
+	cols := component.NewTableCols("Name", "Secrets", "Age", "Labels")
 	ot := NewObjectTable("Service Accounts",
 		"We couldn't find any service accounts!", cols, options.DashConfig.ObjectStore())
 	ot.EnablePluginStatus(options.DashConfig.PluginManager())

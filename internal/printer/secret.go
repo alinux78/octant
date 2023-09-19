@@ -18,7 +18,7 @@ import (
 )
 
 var (
-	secretTableCols = component.NewTableCols("Name", "Labels", "Type", "Data", "Age")
+	secretTableCols = component.NewTableCols("Name", "Type", "Data", "Age", "Labels")
 	secretDataCols  = component.NewTableCols("Key")
 )
 

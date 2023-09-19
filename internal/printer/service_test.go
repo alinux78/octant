@@ -103,7 +103,7 @@ func Test_ServiceListHandler(t *testing.T) {
 	got, err := ServiceListHandler(ctx, object, printOptions)
 	require.NoError(t, err)
 
-	cols := component.NewTableCols("Name", "Labels", "Type", "Cluster IP", "External IP", "Ports", "Age", "Selector")
+	cols := component.NewTableCols("Name", "Type", "Cluster IP", "External IP", "Ports", "Age", "Selector", "Labels")
 	expected := component.NewTable("Services", "We couldn't find any services!", cols)
 	expected.Add(component.TableRow{
 		"Name": component.NewLink("", "service", "/service",

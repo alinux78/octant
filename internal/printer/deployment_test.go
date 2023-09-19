@@ -97,7 +97,7 @@ func Test_DeploymentListHandler(t *testing.T) {
 	containers.Add("nginx", "nginx:1.15")
 	containers.Add("kuard", "gcr.io/kuar-demo/kuard-amd64:1")
 
-	cols := component.NewTableCols("Name", "Labels", "Status", "Age", "Containers", "Selector")
+	cols := component.NewTableCols("Name", "Status", "Age", "Containers", "Selector", "Labels")
 	expected := component.NewTable("Deployments", "We couldn't find any deployments!", cols)
 	expected.Add(component.TableRow{
 		"Name": component.NewLink("", "deployment", "/path",

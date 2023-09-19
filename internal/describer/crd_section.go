@@ -121,7 +121,7 @@ func (csd *CRDSection) describers() []Describer {
 }
 
 func (csd *CRDSection) crdTable(ctx context.Context, namespace string, options Options) (*component.Table, error) {
-	tableCols := component.NewTableCols("Name", "Labels", "Age")
+	tableCols := component.NewTableCols("Name", "Age", "Labels")
 	table := component.NewTable("Custom Resources", "", tableCols)
 
 	describers := csd.describers()

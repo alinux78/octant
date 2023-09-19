@@ -30,7 +30,7 @@ const (
 )
 
 var (
-	nodeListColumns = component.NewTableCols("Name", "Labels", "Status", "Roles", "Age", "Version")
+	nodeListColumns = component.NewTableCols("Name", "Status", "Roles", "Age", "Version", "Labels")
 )
 
 // NodeListHandler is a printFunc that prints nodes

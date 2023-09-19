@@ -98,7 +98,7 @@ func Test_PodListHandler(t *testing.T) {
 	got, err := PodListHandler(ctx, object, printOptions)
 	require.NoError(t, err)
 
-	cols := component.NewTableCols("Name", "Labels", "Ready", "Phase", "Status", "Restarts", "Node", "Age")
+	cols := component.NewTableCols("Name", "Ready", "Phase", "Status", "Restarts", "Node", "Age", "Labels")
 	expected := component.NewTable("Pods", "We couldn't find any pods!", cols)
 	expected.Add(component.TableRow{
 		"Name": component.NewLink("", "pod", "/pod",
@@ -248,7 +248,7 @@ func Test_PodListHandlerTerminating(t *testing.T) {
 	got, err := PodListHandler(ctx, object, printOptions)
 	require.NoError(t, err)
 
-	cols := component.NewTableCols("Name", "Labels", "Ready", "Phase", "Status", "Restarts", "Node", "Age")
+	cols := component.NewTableCols("Name", "Ready", "Phase", "Status", "Restarts", "Node", "Age", "Labels")
 	expected := component.NewTable("Pods", "We couldn't find any pods!", cols)
 	expected.Add(component.TableRow{
 		"Name": component.NewLink("", "pi-7xpxr", "/pi-7xpxr",
@@ -300,7 +300,7 @@ func TestPodListHandler_sorted(t *testing.T) {
 	got, err := PodListHandler(ctx, list, printOptions)
 	require.NoError(t, err)
 
-	cols := component.NewTableCols("Name", "Labels", "Ready", "Phase", "Status", "Restarts", "Node", "Age")
+	cols := component.NewTableCols("Name", "Ready", "Phase", "Status", "Restarts", "Node", "Age", "Labels")
 	expected := component.NewTable("Pods", "We couldn't find any pods!", cols)
 	expected.Add(component.TableRow{
 		"Name": component.NewLink("", "pod1", "/pod1",

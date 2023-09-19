@@ -129,7 +129,7 @@ func Test_IngressListHandler(t *testing.T) {
 		Items: []networkingv1.Ingress{*hostTest2},
 	}
 
-	cols := component.NewTableCols("Name", "Labels", "Hosts", "Address", "Ports", "Age")
+	cols := component.NewTableCols("Name", "Hosts", "Address", "Ports", "Age", "Labels")
 
 	service := testutil.ToUnstructured(t, testutil.CreateService("service"))
 	secret := testutil.ToUnstructured(t, testutil.CreateSecret("secret"))

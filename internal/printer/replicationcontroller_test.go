@@ -84,7 +84,7 @@ func Test_ReplicationControllerListHandler(t *testing.T) {
 	containers := component.NewContainers()
 	containers.Add("nginx", "nginx:1.15")
 
-	cols := component.NewTableCols("Name", "Labels", "Status", "Age", "Containers", "Selector")
+	cols := component.NewTableCols("Name", "Status", "Age", "Containers", "Selector", "Labels")
 	expected := component.NewTable("ReplicationControllers", "We couldn't find any replication controllers!", cols)
 	expected.Add(component.TableRow{
 		"Name": component.NewLink("", "rc-test", "/rc",

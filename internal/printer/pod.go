@@ -26,7 +26,7 @@ import (
 )
 
 var (
-	podColsWithLabels    = component.NewTableCols("Name", "Labels", "Ready", "Phase", "Status", "Restarts", "Node", "Age")
+	podColsWithLabels    = component.NewTableCols("Name", "Ready", "Phase", "Status", "Restarts", "Node", "Age", "Labels")
 	podColsWithOutLabels = component.NewTableCols("Name", "Ready", "Phase", "Status", "Restarts", "Node", "Age")
 	podResourceCols      = component.NewTableCols("Container", "Request: Memory", "Request: CPU", "Limit: Memory", "Limit: CPU")
 )

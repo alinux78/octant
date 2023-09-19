@@ -20,7 +20,7 @@ import (
 )
 
 var (
-	namespaceListCols           = component.NewTableCols("Name", "Labels", "Status", "Age")
+	namespaceListCols           = component.NewTableCols("Name", "Status", "Age", "Labels")
 	namespaceResourceQuotasCols = component.NewTableCols("Resource", "Used", "Limit")
 	namespaceResourceLimitsCols = component.NewTableCols("Type", "Resource", "Min", "Max", "Default Request", "Default Limit", "Limit/Request Ratio")
 )

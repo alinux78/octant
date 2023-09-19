@@ -30,7 +30,7 @@ func HorizontalPodAutoscalerListHandler(ctx context.Context, list *autoscalingv1
 		return nil, errors.New("horizontalpod handler list is nil")
 	}
 
-	cols := component.NewTableCols("Name", "Labels", "Targets", "Minimum Pods", "Maximum Pods", "Replicas", "Age")
+	cols := component.NewTableCols("Name", "Targets", "Minimum Pods", "Maximum Pods", "Replicas", "Age", "Labels")
 	ot := NewObjectTable("Horizontal Pod Autoscalers",
 		"We couldn't find any horizontal pod autoscalers", cols, options.DashConfig.ObjectStore())
 	ot.EnablePluginStatus(options.DashConfig.PluginManager())

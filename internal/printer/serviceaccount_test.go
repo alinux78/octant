@@ -52,7 +52,7 @@ func Test_ServiceAccountListHandler(t *testing.T) {
 	got, err := ServiceAccountListHandler(ctx, list, printOptions)
 	require.NoError(t, err)
 
-	cols := component.NewTableCols("Name", "Labels", "Secrets", "Age")
+	cols := component.NewTableCols("Name", "Secrets", "Age", "Labels")
 	expected := component.NewTable("Service Accounts", "We couldn't find any service accounts!", cols)
 	expected.Add(component.TableRow{
 		"Name": component.NewLink("", object.Name, "/path",

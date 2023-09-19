@@ -20,7 +20,7 @@ import (
 )
 
 func Test_NetworkPolicyListHandler(t *testing.T) {
-	cols := component.NewTableCols("Name", "Labels", "Age")
+	cols := component.NewTableCols("Name", "Age", "Labels")
 	now := testutil.Time()
 
 	labels := map[string]string{

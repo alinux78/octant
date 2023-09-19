@@ -27,7 +27,7 @@ func CronJobListHandler(ctx context.Context, list *batchv1beta1.CronJobList, opt
 		return nil, errors.New("nil list")
 	}
 
-	cols := component.NewTableCols("Name", "Labels", "Schedule", "Age")
+	cols := component.NewTableCols("Name", "Schedule", "Age", "Labels")
 	ot := NewObjectTable("CronJobs", "We couldn't find any cron jobs!", cols, opts.DashConfig.ObjectStore())
 	ot.EnablePluginStatus(opts.DashConfig.PluginManager())
 	for _, c := range list.Items {

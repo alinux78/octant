@@ -21,7 +21,7 @@ import (
 )
 
 var (
-	JobCols = component.NewTableCols("Name", "Labels", "Completions", "Successful", "Age")
+	JobCols = component.NewTableCols("Name", "Completions", "Successful", "Age", "Labels")
 )
 
 // JobListHandler prints a job list.

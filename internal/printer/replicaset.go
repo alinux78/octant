@@ -26,7 +26,7 @@ func ReplicaSetListHandler(ctx context.Context, list *appsv1.ReplicaSetList, opt
 		return nil, errors.New("nil list")
 	}
 
-	cols := component.NewTableCols("Name", "Labels", "Status", "Age", "Containers", "Selector")
+	cols := component.NewTableCols("Name", "Status", "Age", "Containers", "Selector", "Labels")
 	ot := NewObjectTable("ReplicaSets", "We couldn't find any replica sets!", cols, opts.DashConfig.ObjectStore())
 	ot.EnablePluginStatus(opts.DashConfig.PluginManager())
 	for _, rs := range list.Items {

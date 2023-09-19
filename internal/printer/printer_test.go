@@ -234,7 +234,7 @@ func Test_DefaultPrinter(t *testing.T) {
 	got, err := DefaultPrintFunc(ctx, object, printOptions)
 	require.NoError(t, err)
 
-	cols := component.NewTableCols("Name", "Labels", "Age")
+	cols := component.NewTableCols("Name", "Age", "Labels")
 	expected := component.NewTable("/v1, Kind=DeploymentList", "We couldn't find any objects!", cols)
 	expected.Add(component.TableRow{
 		"Name":   component.NewText("deployment"),

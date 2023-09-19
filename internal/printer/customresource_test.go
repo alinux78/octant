@@ -59,7 +59,7 @@ func TestCustomResourceLister_List(t *testing.T) {
 			wantErr: false,
 			want: component.NewTableWithRows(
 				"crontabs.stable.example.com/v1", "We could not find any crontabs.stable.example.com/v1!",
-				component.NewTableCols("Name", "Labels", "Age"),
+				component.NewTableCols("Name", "Age", "Labels"),
 				[]component.TableRow{
 					{
 						"Name":   component.NewLink("", "my-crontab", "/my-crontab"),
@@ -89,7 +89,7 @@ func TestCustomResourceLister_List(t *testing.T) {
 			wantErr: false,
 			want: component.NewTableWithRows(
 				"crontabs.stable.example.com/v1", "We could not find any crontabs.stable.example.com/v1!",
-				component.NewTableCols("Name", "Labels", "Spec", "Replicas", "Errors", "Resource Name", "Age"),
+				component.NewTableCols("Name", "Spec", "Replicas", "Errors", "Resource Name", "Age", "Labels"),
 				[]component.TableRow{
 					{
 						"Name":          component.NewLink("", "my-crontab", "/my-crontab"),

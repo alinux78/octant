@@ -77,7 +77,7 @@ func Test_HorizontalPodAutoscalerListHandler(t *testing.T) {
 	got, err := HorizontalPodAutoscalerListHandler(ctx, list, printOptions)
 	require.NoError(t, err)
 
-	cols := component.NewTableCols("Name", "Labels", "Targets", "Minimum Pods", "Maximum Pods", "Replicas", "Age")
+	cols := component.NewTableCols("Name", "Targets", "Minimum Pods", "Maximum Pods", "Replicas", "Age", "Labels")
 	expected := component.NewTable("Horizontal Pod Autoscalers", "We couldn't find any horizontal pod autoscalers", cols)
 	expected.Add(component.TableRow{
 		"Name": component.NewLink("", "horizontalpodautoscaler", "/path",

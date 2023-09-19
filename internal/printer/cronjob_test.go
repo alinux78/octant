@@ -76,7 +76,7 @@ func Test_CronJobListHandler(t *testing.T) {
 		"name":       cronJob.Name,
 	}
 
-	cols := component.NewTableCols("Name", "Labels", "Schedule", "Age")
+	cols := component.NewTableCols("Name", "Schedule", "Age", "Labels")
 	expected := component.NewTable("CronJobs", "We couldn't find any cron jobs!", cols)
 	expected.Add(component.TableRow{
 		"Name": component.NewLink("", "cron", "/cron", func(l *component.Link) {
@@ -249,7 +249,7 @@ func Test_createJobListView(t *testing.T) {
 	got, err := createJobListView(ctx, cronJob, printOptions)
 	require.NoError(t, err)
 
-	cols := component.NewTableCols("Name", "Labels", "Completions", "Successful", "Age")
+	cols := component.NewTableCols("Name", "Completions", "Successful", "Age", "Labels")
 	expected := component.NewTable("Jobs", "We couldn't find any jobs!", cols)
 	expected.Add(component.TableRow{
 		"Name": component.NewLink("", "job", "/job",
