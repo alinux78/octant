@@ -199,7 +199,7 @@ const startBinary = (port: number) => {
     );
   }
 
-  const args= ['--disable-open-browser'];
+  const args= ['open-browser'];
   if(electronStore.get('development').verbose) {
     args.push('--verbose');
   }

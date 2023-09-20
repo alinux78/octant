@@ -115,8 +115,8 @@ func NewRunner(ctx context.Context, logger log.Logger, opts ...RunnerOption) (*R
 		return nil, fmt.Errorf("failed to create dash instance: %w", err)
 	}
 
-	if viper.GetBool("disable-open-browser") {
-		d.willOpenBrowser = false
+	if viper.GetBool("open-browser") {
+		d.willOpenBrowser = true
 	}
 
 	r.dash = d
@@ -488,7 +488,7 @@ func newDash(listener net.Listener, namespace, uiURL string, browserPath string,
 		uiURL:           uiURL,
 		browserPath:     browserPath,
 		defaultHandler:  octant.GetFrontendHandler,
-		willOpenBrowser: true,
+		willOpenBrowser: false,
 		apiHandler:      apiHandler,
 		pluginService:   pluginHandler,
 		logger:          logger,

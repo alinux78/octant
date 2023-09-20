@@ -60,7 +60,7 @@ func newOctantCmd(version string, gitCommit string, buildTime string) *cobra.Com
 
 			shutdownCh := make(chan bool, 1)
 
-			logger.Debugf("disable-open-browser: %s", viper.Get("disable-open-browser"))
+			logger.Debugf("open-browser: %s", viper.Get("open-browser"))
 
 			if viper.GetString("kubeconfig") == "" {
 				viper.Set("kubeconfig", clientcmd.NewDefaultClientConfigLoadingRules().GetDefaultFilename())
@@ -166,7 +166,7 @@ func newOctantCmd(version string, gitCommit string, buildTime string) *cobra.Com
 	octantCmd.Flags().StringP("accepted-hosts", "", "", "accepted hosts list [DEV]")
 	octantCmd.Flags().Float32P("client-qps", "", 200, "maximum QPS for client [DEV]")
 	octantCmd.Flags().IntP("client-burst", "", 400, "maximum burst for client throttle [DEV]")
-	octantCmd.Flags().BoolP("disable-open-browser", "", false, "disable automatic launching of the browser [DEV]")
+	octantCmd.Flags().BoolP("open-browser", "", false, "launch browser and load client at start-up [DEV]")
 	octantCmd.Flags().BoolP("disable-origin-check", "", false, "disable cross origin resource check")
 	octantCmd.Flags().BoolP("enable-opencensus", "c", false, "enable open census [DEV]")
 	octantCmd.Flags().IntP("klog-verbosity", "", 0, "klog verbosity level [DEV]")
